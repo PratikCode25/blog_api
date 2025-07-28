@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "264e9388-6a52-41cd-b777-de3aad8451c3",
+		"name": "Blog Post API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41116846"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sujan\",\r\n    \"email\":\"sujan56@yopmail.com\",\r\n    \"password\":\"sujan@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Email Verify",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rajiv56@yopmail.com\",\r\n    \"otp\":\"8771\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/auth/verify-email",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"auth",
+						"verify-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rajiv56@yopmail.com\",\r\n    \"password\":\"rajiv@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2OTIyNDAsImV4cCI6MTc1MzcwMzA0MH0.p1Kj4abzXjhVWSxWH4KllfoBhZtt5Ezq3GKXSKPtUCA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bio",
+							"value": "Hello evryone, good day",
+							"type": "text"
+						},
+						{
+							"key": "profilePicture",
+							"type": "file",
+							"src": "/C:/Users/USER/Pictures/Saved Pictures/image10.jpeg"
+						},
+						{
+							"key": "name",
+							"value": "Rajiv Roy",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3005/api/user/profile-update",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"user",
+						"profile-update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3005/api/user/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Blog Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Technology\",\r\n    \"description\":\"Information about technology\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/categories/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"categories",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Post",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"AI advantage and disadvantage\",\r\n    \"content\":\"AI has its advantage and disadvantage\",\r\n    \"category\":\"68871acac22a8d43878aa7d5\",\r\n    \"tags\":[\"AI\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/posts/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"posts",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Lead a good life\",\r\n    \"content\":\"Some good habists can help to lead a good life\",\r\n    \"category\":\"68871aa7c22a8d43878aa7d3\",\r\n    \"tags\":[\"Habit\",\"good\",\"life\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/posts/688724bce8634acf1e6bdb81/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"posts",
+						"688724bce8634acf1e6bdb81",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/posts/68872054089e967fb4e5e815/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"posts",
+						"68872054089e967fb4e5e815",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Toggle Like",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MjYyNzQxNTU1ZjVlZDY0MjQ4MjYiLCJuYW1lIjoiTXVrZXNoIiwiZW1haWwiOiJtdWtlc2g1NkB5b3BtYWlsLmNvbSIsImlhdCI6MTc1MzY4ODQ1MCwiZXhwIjoxNzUzNjk5MjUwfQ.sdh5JuBkFlZtXvjjaqUH-Lj4hgBZ4MY9GoRwbHa0Kfk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/posts/6887250de8634acf1e6bdb84/toggle-like",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"posts",
+						"6887250de8634acf1e6bdb84",
+						"toggle-like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Categories with Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Technology\",\r\n    \"description\":\"Information about technology\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3005/api/categories/",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Posts Sorted By Likes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODg3MDg2ZWM1NmE4YWVhMTJmOWM5OTYiLCJuYW1lIjoicmFqaXYiLCJlbWFpbCI6InJhaml2NTZAeW9wbWFpbC5jb20iLCJpYXQiOjE3NTM2ODA4OTUsImV4cCI6MTc1MzY5MTY5NX0.U_XguD-53ODDYsNRmmlgI26DqyldwHsO_eu0CTVXHAI",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/api/posts/",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
