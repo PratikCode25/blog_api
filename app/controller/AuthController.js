@@ -124,7 +124,7 @@ class AuthController {
             if (!user) {
                 return res.status(404).json({
                     success: false,
-                    message: 'User does not exists'
+                    message: 'User does not exist'
                 })
             }
 
