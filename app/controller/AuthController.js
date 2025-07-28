@@ -128,6 +128,13 @@ class AuthController {
                 })
             }
 
+            if(!user.isVerified){
+                 return res.status(400).json({
+                    success: false,
+                    message: 'User is not verified'
+                })
+            }
+
             const isMatch = await bcrypt.compare(password, user.password);
             if (!isMatch) {
                 return res.status(400).json({
